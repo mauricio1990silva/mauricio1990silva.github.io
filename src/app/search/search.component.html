@@ -1,0 +1,23 @@
+<div style="width: 100%">
+  <md-toolbar color="primary" style="text-align: center; min-height: 120px !important;">
+    <span style="font-size: xx-large"><b>REP</b>lationship</span>
+    <span class="example-spacer"></span>
+    <img style="margin-top: 175px; width: 300px;" src="../../assets/img/createathon-logo.png">
+  </md-toolbar>
+  <form class="example-form">
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-form-field>
+            <input type="text" #crdNumber mdInput placeholder="Rep Name">
+          </md-form-field>
+        </td>
+        <td>
+          <button md-raised-button color="primary" (click)="searchRep(crdNumber.value)">Go</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <image-list *ngIf="allFinished" [imageList]="urlsList$ | async" [matrix]="matrix"></image-list>
+  <current-photo style="margin-top: 40px;" [loading]="currentPhotoLoading" [photoUrl]="currentPhotoUrl"></current-photo>
+</div>

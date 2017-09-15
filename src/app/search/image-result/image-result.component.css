@@ -1,0 +1,7 @@
+.example2-card {
+  width: 300px;
+  height: 250px;
+}
+:host{
+  margin: 20px;
+}

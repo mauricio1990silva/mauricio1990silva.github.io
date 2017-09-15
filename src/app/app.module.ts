@@ -2,38 +2,44 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { AppComponent } from './app.component';
-import { GithubService } from './github/shared/github.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { RepoBrowserComponent } from './github/repo-browser/repo-browser.component';
-import { RepoListComponent } from './github/repo-list/repo-list.component';
-import { RepoDetailComponent } from './github/repo-detail/repo-detail.component';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { ContactComponent } from './contact/contact.component';
+import {SearchComponent} from "./search/search.component";
+import {GoogleService} from "./service/google.service";
+import {ImageListComponent} from "./search/image-list/image-list.component";
+import {
+  MdButtonModule, MdCardModule, MdInputModule, MdProgressBarModule, MdToolbar,
+  MdToolbarModule
+} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CurrentPhotoComponent} from "./search/current-photo/current-photo.component";
+import {ImageResultComponent} from "./search/image-result/image-result.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    RepoBrowserComponent,
-    RepoListComponent,
-    RepoDetailComponent,
-    HomeComponent,
-    ContactComponent
+    SearchComponent,
+    ImageListComponent,
+    CurrentPhotoComponent,
+    ImageResultComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: true })
+    RouterModule.forRoot(rootRouterConfig, { useHash: true }),
+    BrowserAnimationsModule,
+    MdProgressBarModule,
+    MdButtonModule,
+    MdToolbarModule,
+    MdInputModule,
+    MdCardModule
   ],
   providers: [
-    GithubService
+    GoogleService
   ],
   bootstrap: [ AppComponent ]
 })

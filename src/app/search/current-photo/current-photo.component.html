@@ -1,0 +1,8 @@
+<md-card *ngIf="loading" class="example-card">
+  <md-progress-bar mode="indeterminate"></md-progress-bar>
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>Analyzing photo...</md-card-title>
+  </md-card-header>
+  <img style="max-height: 300px;" md-card-image [src]="photoUrl">
+</md-card>
